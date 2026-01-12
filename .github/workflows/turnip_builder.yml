@@ -2,6 +2,11 @@ name: Build "turnip"
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to build'
+        required: true
+        type: string
 
 jobs:
   start_building_turnip:
@@ -22,9 +27,9 @@ jobs:
     - name: Release "turnip"
       uses: softprops/action-gh-release@v1
       with:
-        body: Turnip Vulkan driver library
-        tag_name: github_run
+        body: Turnip Vulkan driver library Release V${{ inputs.version }}
+        tag_name: tu_v${{ inputs.version }}
         name: Action Release
         files: |
-           /tmp/a8xx-gen8-hacks.zip
-           /tmp/a8xx-gen8-yuck.zip
+           /tmp/a8xx-gen8-hacks-V${{ inputs.version }}.zip
+           /tmp/a8xx-gen8-yuck-V${{ inputs.version }}.zip
