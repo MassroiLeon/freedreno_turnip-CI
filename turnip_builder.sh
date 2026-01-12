@@ -9,7 +9,7 @@ workdir="$(pwd)/turnip_workdir"
 magiskdir="$workdir/turnip_module"
 ndkver="android-ndk-r29"
 ndk="$workdir/$ndkver/toolchains/llvm/prebuilt/linux-x86_64/bin"
-sdkver="36"
+sdkver="34"
 mesasrc="https://github.com/whitebelyash/mesa-tu8"
 srcfolder="mesa"
 
@@ -127,6 +127,8 @@ EOF
 			-Dvulkan-beta=true \
 			-Dfreedreno-kmds=kgsl \
 			-Degl=disabled \
+			-Dplatform-sdk-version=36 \
+			-Dandroid-libbacktrace=disabled \
 			--reconfigure
 
 	echo "Compiling build files ..." $'\n'
