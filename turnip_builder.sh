@@ -22,7 +22,7 @@ run_all(){
 	check_deps
 	prepare_workdir
 	build_lib_for_android gen8-hacks
-	build_lib_for_android gen8-yuck
+	#build_lib_for_android gen8-yuck
 }
 
 check_deps(){
