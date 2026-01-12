@@ -19,14 +19,6 @@ jobs:
     - name: Execute build script
       run: bash ./turnip_builder.sh
 
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Upload meson and ninja logs for debugging
-        path: |
-          turnip_workdir/ninja_log
-          turnip_workdir/mesa-main/build-android-aarch64/meson-logs/meson-log.txt
-
     - name: Release "turnip"
       uses: softprops/action-gh-release@v1
       with:
