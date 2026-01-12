@@ -31,7 +31,7 @@ jobs:
       with:
         body: Turnip Vulkan driver library Release V${{ inputs.version }}
         tag_name: tu_v${{ inputs.version }}
-        name: Action Release
+        name: Turnip A8XX v${{ inputs.version }}
         files: |
            /tmp/a8xx-gen8-hacks-V${{ inputs.version }}.zip
            /tmp/a8xx-gen8-yuck-V${{ inputs.version }}.zip
