@@ -4,14 +4,15 @@
 green='\033[0;32m'
 red='\033[0;31m'
 nocolor='\033[0m'
-deps="meson ninja patchelf unzip curl pip flex bison zip glslang glslangValidator"
+deps="git meson ninja patchelf unzip curl pip flex bison zip glslang glslangValidator"
 workdir="$(pwd)/turnip_workdir"
 magiskdir="$workdir/turnip_module"
 ndkver="android-ndk-r29"
 ndk="$workdir/$ndkver/toolchains/llvm/prebuilt/linux-x86_64/bin"
 sdkver="34"
 mesasrc="https://gitlab.freedesktop.org/mesa/mesa/-/archive/mesa-25.3.0/mesa-mesa-25.3.0.zip"
-srcfolder="mesa-25.3.0"
+mesabranch="gen8-hacks"
+srcfolder="mesa"
 
 clear
 
@@ -54,10 +55,8 @@ prepare_workdir(){
 		unzip "$ndkver"-linux.zip &> /dev/null
 
 	echo "Downloading mesa source ..." $'\n'
-		curl "$mesasrc" --output mesa-main.zip &> /dev/null
-	echo "Exracting mesa source ..." $'\n'
-		unzip mesa-main.zip &> /dev/null
-		cd mesa-$srcfolder
+		git clone $mesasrc --depth=1 -b $mesabranch $srcfolder
+		cd $srcfolder
 }
 
 
