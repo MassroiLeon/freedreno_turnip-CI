@@ -55,16 +55,14 @@ prepare_workdir(){
 		unzip "$ndkver"-linux.zip &> /dev/null
 
 	echo "Downloading mesa source ..." $'\n'
-		git clone $mesasrc --depth=1 $srcfolder
+		git clone $mesasrc --depth=1 --no-single-branch $srcfolder
 		cd $srcfolder
 }
 
 
 build_lib_for_android(){
 	echo "==== Building Mesa on $1 branch ===="
-	git fetch origin $1 --depth=1
 	git checkout origin/$1
-	git switch -c $1
 	#Workaround for using Clang as c compiler instead of GCC
 	mkdir -p "$workdir/bin"
 	ln -sf "$ndk/clang" "$workdir/bin/cc"
