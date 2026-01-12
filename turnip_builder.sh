@@ -150,9 +150,9 @@ EOF
   "libraryName": "libvulkan_freedreno.so"
 }
 EOF
-zip /tmp/a8xx-$1-$BUILD_VERSION.zip libvulkan_freedreno.so meta.json
+zip /tmp/a8xx-$1-V$BUILD_VERSION.zip libvulkan_freedreno.so meta.json
 cd -
-if ! [ -a /tmp/a8xx-$1-$BUILD_VERSION.zip ]; then
+if ! [ -a /tmp/a8xx-$1-V$BUILD_VERSION.zip ]; then
 	echo -e "$red Failed to pack the archive! $nocolor"
 fi
 }
