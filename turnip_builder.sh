@@ -142,7 +142,7 @@ EOF
 	cat <<EOF >"meta.json"
 {
   "schemaVersion": 1,
-  "name": "A8XX Draft v$BUILD_VERSION",
+  "name": "A8XX MR v$BUILD_VERSION",
   "description": "A8xx support MR with A830/A825/A810/A829/UBWC-on-KGSL hacks. Built from $1 branch",
   "author": "whitebelyash",
   "packageVersion": "1",
