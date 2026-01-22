@@ -24,7 +24,7 @@ jobs:
         sudo apt install meson-1.5 
 
     - name: Execute build script
-      run: bash ./turnip_builder.sh
+      run: bash ./turnip_builder_upstream.sh
 
     - name: Release "turnip"
       uses: softprops/action-gh-release@v1
@@ -44,4 +44,4 @@ jobs:
         tag_name: mesa26_v${{ inputs.version }}
         name: Mesa 26.0 Turnip v${{ inputs.version }}
         files: |
-           /tmp/mesa-turnip-V${{ inputs.version }}.zip
+           /tmp/mesa-turnip-main-V${{ inputs.version }}.zip
