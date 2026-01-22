@@ -60,7 +60,7 @@ prepare_workdir(){
 		cd $srcfolder
   echo "Applying patches..."
     wget https://github.com/whitebelyash/mesa-tu8/releases/download/patchset-head/tu_gen8_kgsl_android.patch -o kgsl.patch
-    git am kgsl.patch
+    git apply kgsl.patch
 #	echo "Pushing TU_VERSION..."
 #		echo "#define TUGEN8_DRV_VERSION \"v$BUILD_VERSION\"" > ./src/freedreno/vulkan/tu_version.h
 }
