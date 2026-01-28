@@ -118,21 +118,18 @@ EOF
 			--prefix /tmp/turnip-$1 \
 			-Dbuildtype=release \
 			-Db_lto=false \
-   			-Db_lto_mode=thin \
 			-Dstrip=true \
 			-Dplatforms=android \
 			-Dvideo-codecs= \
-			-Dplatform-sdk-version="$sdkver" \
 			-Dandroid-stub=true \
 			-Dgallium-drivers= \
 			-Dvulkan-drivers=freedreno \
 			-Dvulkan-beta=true \
-			-Dfreedreno-ubwc=false \
 			-Dfreedreno-kmds=kgsl \
 			-Dandroid-libbacktrace=disabled \
 			-Dvalgrind=disabled \
 			-Degl=disabled \
-			-Dplatform-sdk-version=36 \
+			-Dplatform-sdk-version=34 \
 			-Dandroid-libbacktrace=disabled \
 			--reconfigure
 
