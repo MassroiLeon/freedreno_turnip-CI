@@ -117,7 +117,7 @@ EOF
 			--native-file "native.txt" \
 			--prefix /tmp/turnip-$1 \
 			-Dbuildtype=release \
-			-Db_lto=true \
+			-Db_lto=false \
    			-Db_lto_mode=thin \
 			-Dstrip=true \
 			-Dplatforms=android \
@@ -127,7 +127,10 @@ EOF
 			-Dgallium-drivers= \
 			-Dvulkan-drivers=freedreno \
 			-Dvulkan-beta=true \
+			-Dfreedreno-ubwc=false \
 			-Dfreedreno-kmds=kgsl \
+			-Dandroid-libbacktrace=disabled \
+			-Dvalgrind=disabled \
 			-Degl=disabled \
 			-Dplatform-sdk-version=36 \
 			-Dandroid-libbacktrace=disabled \
